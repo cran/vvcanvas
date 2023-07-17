@@ -1,4 +1,11 @@
-# vvcanvas Package
+# vvcanvas <a href="https://vusaverse.github.io/vvcanvas/"><img src="man/figures/logo.png" style="float:right; height:200px;" height="200" align="right" /></a>
+
+
+[![CodeFactor](https://www.codefactor.io/repository/github/vusaverse/vvcanvas/badge)](https://www.codefactor.io/repository/github/vusaverse/vvcanvas)
+[![R-CMD-check](https://github.com/vusaverse/vvcanvas/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vusaverse/vvcanvas/actions/workflows/R-CMD-check.yaml)
+[![CRAN status](https://www.r-pkg.org/badges/version/vvcanvas)](https://CRAN.R-project.org/package=vvcanvas/)
+[![CRAN last month downloads](https://cranlogs.r-pkg.org/badges/last-month/vvcanvas?color=green/)](https://cran.r-project.org/package=vvcanvas/)
+[![CRAN last month downloads](https://cranlogs.r-pkg.org/badges/grand-total/vvcanvas?color=green/)](https://cran.r-project.org/package=vvcanvas/)
 
 The `vvcanvas` package is an R library that provides a convenient interface to interact with the Canvas Learning Management System (LMS) API. It allows users to authenticate, retrieve course information, fetch specific details, and perform various operations within the Canvas LMS.
 
@@ -10,7 +17,11 @@ You can install the `vvcanvas` package from GitHub using the following command:
 devtools::install_github("vusaverse/vvcanvas")
 ```
 
-The aim is to have the package hosted on CRAN in the near future.
+It is also possible to install from CRAN:
+
+```
+install.packages("vvcanvas")
+```
 
 ## Getting Started
 

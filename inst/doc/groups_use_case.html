@@ -12,7 +12,7 @@
 
 
 
-<title>Getting Started</title>
+<title>Working with groups</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -336,56 +336,60 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 
-<h1 class="title toc-ignore">Getting Started</h1>
+<h1 class="title toc-ignore">Working with groups</h1>
 
 
 
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>The <code>vvcanvas</code> package is designed to interact with the
-Canvas Learning Management System (LMS) API. This vignette provides a
-basic guide on how to authenticate, retrieve course information, and
-fetch specific details using the package.</p>
+<p>This vignette demonstrates how to retrieve group memberships in a
+course using the Canvas LMS API.</p>
 </div>
-<div id="installation" class="section level1">
-<h1>Installation</h1>
-<p>To install the <code>vvcanvas</code> package, you can use the
-following command:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">&quot;vusaverse/vvcanvas&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(vvcanvas)</span></code></pre></div>
+<div id="step-1-list-courses" class="section level1">
+<h1>Step 1: List courses</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(vvcanvas)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co"># Specify the Canvas API authentication details</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>canvas <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>  <span class="at">api_key =</span> <span class="st">&quot;YOUR_API_KEY&quot;</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>  <span class="at">base_url =</span> <span class="st">&quot;https://your_canvas_instance/&quot;</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>)</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="co"># Retrieve all courses</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>courses <span class="ot">&lt;-</span> <span class="fu">get_courses</span>(canvas)</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="co"># Select a course (replace the index with the desired course)</span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>course_id <span class="ot">&lt;-</span> course<span class="sc">$</span>id[<span class="dv">1</span>] <span class="do">## the first course in courses</span></span></code></pre></div>
 </div>
-<div id="authentication" class="section level1">
-<h1>Authentication</h1>
-<p>To start using the package, you need to authenticate with the Canvas
-LMS API using your API key and base URL. Here’s an example of how to
-authenticate:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Replace the placeholders with your API key and base URL</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>api_key <span class="ot">&lt;-</span> <span class="st">&quot;YOUR_API_KEY&quot;</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>base_url <span class="ot">&lt;-</span> <span class="st">&quot;https://your_canvas_domain.com&quot;</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co"># Authenticate with the Canvas LMS API</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>canvas <span class="ot">&lt;-</span> <span class="fu">canvas_authenticate</span>(api_key, base_url)</span></code></pre></div>
+<div id="step-2-retrieve-all-groups-in-the-course" class="section level1">
+<h1>Step 2: Retrieve all groups in the course</h1>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Retrieve all groups in the selected course</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>groups <span class="ot">&lt;-</span> <span class="fu">get_course_groups</span>(canvas, course_id)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Extract the group IDs</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>group_ids <span class="ot">&lt;-</span> groups<span class="sc">$</span>id</span></code></pre></div>
 </div>
-<div id="retrieving-course-information" class="section level1">
-<h1>Retrieving Course Information</h1>
-<p>Once authenticated, you can retrieve course information using the
-get_courses function. Here’s an example:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Fetch the dataframe of courses</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>courses <span class="ot">&lt;-</span> <span class="fu">get_courses</span>(canvas)</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="fu">head</span>(courses)</span></code></pre></div>
-</div>
-<div id="fetching-specific-details" class="section level1">
-<h1>Fetching Specific Details</h1>
-<p>The <code>vvcanvas</code> package provides various functions to fetch
-specific details. For example, to retrieve the assignments within a
-course, you can use the get_assignments function:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Replace the placeholder with the desired course ID</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>course_id <span class="ot">&lt;-</span> <span class="dv">12345</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># Fetch the assignments for the course</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>assignments <span class="ot">&lt;-</span> <span class="fu">get_assignments</span>(canvas, course_id)</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="fu">head</span>(assignments)</span></code></pre></div>
+<div id="step-3-retrieve-group-memberships" class="section level1">
+<h1>Step 3: Retrieve group memberships</h1>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co"># Retrieve group memberships using purrr</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>memberships <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map_df</span>(group_ids, <span class="sc">~</span>{</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>  group_id <span class="ot">&lt;-</span> .x</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  </span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>  <span class="co"># Retrieve the group&#39;s memberships</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  group_memberships <span class="ot">&lt;-</span> <span class="fu">get_group_users</span>(canvas, group_id)</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>  </span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>  <span class="co"># Extract user names from memberships</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>  user_names <span class="ot">&lt;-</span> group_memberships<span class="sc">$</span>name</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>  </span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>  <span class="co"># Create a data frame with group memberships</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>  group_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">group_id =</span> <span class="fu">rep</span>(group_id, <span class="fu">length</span>(user_names)),</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>                         <span class="at">user_name =</span> user_names,</span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>                         <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>  <span class="fu">return</span>(group_df)</span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>})</span></code></pre></div>
 </div>
 
 
