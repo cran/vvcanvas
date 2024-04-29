@@ -24,6 +24,11 @@ It is also possible to install from CRAN:
 install.packages("vvcanvas")
 ```
 
+## Features
+To see which functions are available in which section based on the CANVAS LMS API structure, please refer to the reference page of the `vvcanvas` package. The [reference](https://vusaverse.github.io/vvcanvas/reference/index.html) page provides a comprehensive list of functions available in the package, organized by category.
+
+Additionally, the package includes vignettes that provide more detailed information on how to use the functions in the package.
+
 ## Getting Started
 
 To begin using the `vvcanvas` package, you need to authenticate with the Canvas LMS API by obtaining an API key and base URL. Follow these steps to get started:
@@ -37,10 +42,19 @@ library(vvcanvas)
 
 # Replace the placeholders with your API key and base URL
 api_key <- "YOUR_API_KEY"
-base_url <- "https://your_canvas_domain.com"
+base_url <- "https://your_canvas_domain.com/"
 
 # Authenticate with the Canvas LMS API
 canvas <- canvas_authenticate(api_key, base_url)
+
+## Alternatively, you can set system variables
+
+# Set the API key and base URL as environment variables
+Sys.setenv(CANVAS_API_KEY = "YOUR_API_KEY")
+Sys.setenv(CANVAS_BASE_URL = "https://your_canvas_domain.com/")
+
+# Authenticate with the Canvas LMS API
+canvas <- canvas_authenticate()
 
 ```
 
