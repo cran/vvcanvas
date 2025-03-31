@@ -8,7 +8,7 @@
 [![CRAN last month downloads](https://cranlogs.r-pkg.org/badges/last-month/vvcanvas?color=green/)](https://cran.r-project.org/package=vvcanvas/)
 [![CRAN last month downloads](https://cranlogs.r-pkg.org/badges/grand-total/vvcanvas?color=green/)](https://cran.r-project.org/package=vvcanvas/)
 
-The `vvcanvas` package is an R library that provides a convenient interface to interact with the Canvas Learning Management System (LMS) API. It allows users to authenticate, retrieve course information, fetch specific details, and perform various operations within the Canvas LMS.
+The open source R package vvcanvas provides a convenient interface to interact with the Canvas Learning Management System (LMS) API. It allows users to authenticate, retrieve course information, fetch specific details, and perform various operations within the Canvas LMS.
 
 ## Installation
 
@@ -68,4 +68,12 @@ In order to retrieve a dataframe with all courses you can use the following func
 courses <- get_courses(canvas)
 
 ```
+
+# Canvas Analytics Project
+The [canvas-analytics](https://github.com/vusaverse/canvas-analytics) project provides a data pipeline for extracting, aggregating, and analyzing data from the Canvas Learning Management System (LMS) using the `vvcanvas` package. It aims to facilitate data retrieval and analysis at student, course, and program levels, enabling data-driven insights and decision-making in education and learning analytics. Key features include:
+
+- Data extraction from Canvas LMS API
+- Data aggregation at different levels (student, course, program)
+- Data visualization and reporting
+- Reproducible and extensible analysis workflow
 

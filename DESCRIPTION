@@ -1,8 +1,21 @@
 Package: vvcanvas
 Title: 'Canvas' LMS API Integration
-Version: 0.0.4
+Version: 0.0.5
 Authors@R: 
-    person("Tomer", "Iwan", , "t.iwan@vu.nl", role = c("aut", "cre", "cph"))
+  c(person(given = "Tomer", 
+           family = "Iwan", 
+           role = c("aut", "cre"), 
+           email = "t.iwan@vu.nl"
+           ),
+    person(given = "Niels",
+           family = "Smits",
+           role = "ctb",
+           email = "n.smits@uva.nl",
+           comment = c(ORCID = "0000-0003-3669-9266")
+           ),
+    person(given = "VU Analytics",
+           role = "cph"
+           ))
 Description: Allow R users to interact with the 'Canvas' Learning Management System (LMS) API (see
     <https://canvas.instructure.com/doc/api/all_resources.html> for details).
     It provides a set of functions to access and manipulate course data, assignments, grades, users, 
@@ -11,14 +24,16 @@ URL: https://github.com/vusaverse/vvcanvas,
         https://vusaverse.github.io/vvcanvas/
 License: MIT + file LICENSE
 Encoding: UTF-8
-RoxygenNote: 7.2.3
-Imports: dplyr, htm2txt, httr, jsonlite, magrittr, purrr, rlang,
+RoxygenNote: 7.3.2
+Imports: dplyr, htm2txt, httr, jsonlite, magrittr, mime, purrr, rlang,
         stringr, tidyr, utils
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2024-04-29 07:58:29 UTC; tin900
-Author: Tomer Iwan [aut, cre, cph]
+Packaged: 2025-03-31 07:43:35 UTC; tin900
+Author: Tomer Iwan [aut, cre],
+  Niels Smits [ctb] (<https://orcid.org/0000-0003-3669-9266>),
+  VU Analytics [cph]
 Maintainer: Tomer Iwan <t.iwan@vu.nl>
 Repository: CRAN
-Date/Publication: 2024-04-29 09:10:04 UTC
+Date/Publication: 2025-03-31 08:00:02 UTC
