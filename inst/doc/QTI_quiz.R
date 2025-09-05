@@ -12,15 +12,15 @@ knitr::opts_chunk$set(
 #  canvas <- vvcanvas::canvas_authenticate()
 
 ## -----------------------------------------------------------------------------
-#  course_id <- "12345"  # Replace with your actual course ID
+#  course_id <- "12345" # Replace with your actual course ID
 #  quizzes_before <- get_course_quizzes(canvas, course_id)
 
 ## -----------------------------------------------------------------------------
-#  qti_name <- "qti_file"  # Replace with your actual file name
+#  qti_name <- "qti_file" # Replace with your actual file name
 #  quiz_id <- upload_qti_file_with_migration(canvas, course_id, qti_name, wait = TRUE)
 
 ## -----------------------------------------------------------------------------
-#  qti_name <- "qti_file"  # Replace with your actual file name
+#  qti_name <- "qti_file" # Replace with your actual file name
 #  upload_qti_file_with_migration(canvas, course_id, qti_name)
 
 ## -----------------------------------------------------------------------------
@@ -41,5 +41,4 @@ knitr::opts_chunk$set(
 #  
 #  updated_quiz <- update_quiz(canvas, course_id, quiz_id, quiz_params)
 #  print(updated_quiz)
-#  
 

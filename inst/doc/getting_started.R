@@ -26,14 +26,12 @@ knitr::opts_chunk$set(
 #  
 #  # Authenticate with the Canvas LMS API
 #  canvas <- canvas_authenticate()
-#  
 
 ## ----retrieve-----------------------------------------------------------------
 #  # Fetch the dataframe of courses
 #  courses <- get_courses(canvas)
 #  
 #  head(courses)
-#  
 
 ## ----assignments--------------------------------------------------------------
 #  # Replace the placeholder with the desired course ID
@@ -42,5 +40,4 @@ knitr::opts_chunk$set(
 #  # Fetch the assignments for the course
 #  assignments <- get_assignments(canvas, course_id)
 #  head(assignments)
-#  
 

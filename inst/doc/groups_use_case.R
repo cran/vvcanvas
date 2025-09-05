@@ -20,7 +20,6 @@ knitr::opts_chunk$set(
 #  
 #  # Select a course (replace the index with the desired course)
 #  course_id <- course$id[1] ## the first course in courses
-#  
 
 ## ----get_groups---------------------------------------------------------------
 #  # Retrieve all groups in the selected course
@@ -28,12 +27,10 @@ knitr::opts_chunk$set(
 #  
 #  # Extract the group IDs
 #  group_ids <- groups$id
-#  
 
 ## ----get_members--------------------------------------------------------------
-#  
 #  # Retrieve group memberships using purrr
-#  memberships <- purrr::map_df(group_ids, ~{
+#  memberships <- purrr::map_df(group_ids, ~ {
 #    group_id <- .x
 #  
 #    # Retrieve the group's memberships
@@ -43,12 +40,12 @@ knitr::opts_chunk$set(
 #    user_names <- group_memberships$name
 #  
 #    # Create a data frame with group memberships
-#    group_df <- data.frame(group_id = rep(group_id, length(user_names)),
-#                           user_name = user_names,
-#                           stringsAsFactors = FALSE)
+#    group_df <- data.frame(
+#      group_id = rep(group_id, length(user_names)),
+#      user_name = user_names,
+#      stringsAsFactors = FALSE
+#    )
 #  
 #    return(group_df)
 #  })
-#  
-#  
 

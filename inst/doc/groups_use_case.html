@@ -372,24 +372,25 @@ course using the Canvas LMS API.</p>
 </div>
 <div id="step-3-retrieve-group-memberships" class="section level1">
 <h1>Step 3: Retrieve group memberships</h1>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co"># Retrieve group memberships using purrr</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>memberships <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map_df</span>(group_ids, <span class="sc">~</span>{</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>  group_id <span class="ot">&lt;-</span> .x</span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  </span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>  <span class="co"># Retrieve the group&#39;s memberships</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  group_memberships <span class="ot">&lt;-</span> <span class="fu">get_group_users</span>(canvas, group_id)</span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>  </span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>  <span class="co"># Extract user names from memberships</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>  user_names <span class="ot">&lt;-</span> group_memberships<span class="sc">$</span>name</span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>  </span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>  <span class="co"># Create a data frame with group memberships</span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>  group_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">group_id =</span> <span class="fu">rep</span>(group_id, <span class="fu">length</span>(user_names)),</span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>                         <span class="at">user_name =</span> user_names,</span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>                         <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>  <span class="fu">return</span>(group_df)</span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>})</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Retrieve group memberships using purrr</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>memberships <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map_df</span>(group_ids, <span class="sc">~</span> {</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  group_id <span class="ot">&lt;-</span> .x</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="co"># Retrieve the group&#39;s memberships</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>  group_memberships <span class="ot">&lt;-</span> <span class="fu">get_group_users</span>(canvas, group_id)</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>  <span class="co"># Extract user names from memberships</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>  user_names <span class="ot">&lt;-</span> group_memberships<span class="sc">$</span>name</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>  <span class="co"># Create a data frame with group memberships</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>  group_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>    <span class="at">group_id =</span> <span class="fu">rep</span>(group_id, <span class="fu">length</span>(user_names)),</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>    <span class="at">user_name =</span> user_names,</span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>    <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>  )</span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>  <span class="fu">return</span>(group_df)</span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a>})</span></code></pre></div>
 </div>
 
 

@@ -1,6 +1,6 @@
 Package: vvcanvas
 Title: 'Canvas' LMS API Integration
-Version: 0.0.5
+Version: 0.0.6
 Authors@R: 
   c(person(given = "Tomer", 
            family = "Iwan", 
@@ -30,10 +30,10 @@ Imports: dplyr, htm2txt, httr, jsonlite, magrittr, mime, purrr, rlang,
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2025-03-31 07:43:35 UTC; tin900
+Packaged: 2025-09-05 07:14:38 UTC; tin900
 Author: Tomer Iwan [aut, cre],
-  Niels Smits [ctb] (<https://orcid.org/0000-0003-3669-9266>),
+  Niels Smits [ctb] (ORCID: <https://orcid.org/0000-0003-3669-9266>),
   VU Analytics [cph]
 Maintainer: Tomer Iwan <t.iwan@vu.nl>
 Repository: CRAN
-Date/Publication: 2025-03-31 08:00:02 UTC
+Date/Publication: 2025-09-05 17:20:02 UTC
