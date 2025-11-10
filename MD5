@@ -1,7 +1,7 @@
-a84413b265ed6b9c555d29b0e96b8db0 *DESCRIPTION
+809c3fd001fe9e1e8c6fc66d4a6add79 *DESCRIPTION
 1b8deee5fe0f1057bd6851116f16ab12 *LICENSE
 38d0a611205a7977aa9a6ddd60a55212 *NAMESPACE
-8ed39f56ab776a61b124701ba8097747 *NEWS.md
+887fa37fd1b47cbf3c6be222b0febeb9 *NEWS.md
 499db4f2a7feb6e427b6d4bc6ddc8641 *R/authenticate.R
 fa927c42100927a48bddb6e6fe6138b6 *R/create_assignment_group.R
 9160183772a8e4012c64027a358d40da *R/create_conversation.R
@@ -21,7 +21,7 @@ dfb7211e769b0c7018caa9be337b5f1f *R/get_all_courses.R
 86459fa2995b859b761efccde71a89e0 *R/get_assignment_data.R
 043015c4c8f488dd50e23ac6e51a6c59 *R/get_assignment_details.R
 d6d63fb0af24f8dad67dd16624289451 *R/get_assignment_groups.R
-893986e912d19f58b2307e0960f874e4 *R/get_assignment_submissions.R
+6c79b2791cbe13aeeec1805757fbbee7 *R/get_assignment_submissions.R
 d329d3749f8eadc6d318e6af2e5efd1f *R/get_assignments.R
 71ca56cc30e627f0f6ba239714f9c9a7 *R/get_calendar_events.R
 ab433abae9796bda5c42b9a8c5951581 *R/get_conversations.R
@@ -77,7 +77,7 @@ bdd0f4ebdff80e75ae9439000bf9d418 *R/post_new_discussion.R
 8083fbfe7ede293975f0eeb7cfdb2770 *R/upload_folder_file.R
 2d25219ec0fa3c8093b925af0394afab *R/upload_qti_file_with_migration.R
 cf794928715019cf81bd51d467156178 *R/utils-pipe.R
-c5229928800f85fbb7038c109502b1e7 *README.md
+5bb120825db78ad1f1f1091964e838f3 *README.md
 f27bbe50b6eb50535d428fd252335428 *build/vignette.rds
 1a8f47ba17b23c99cc0e3f28047d28f8 *inst/doc/QTI_quiz.R
 bba8888bdc46e1fc086c7b5aa260ffaa *inst/doc/QTI_quiz.Rmd
@@ -112,7 +112,7 @@ a958b4a7e51d9bdd9e93b68caf9b0fda *man/get_accounts.Rd
 4cabed3793f63a40ddcf52eb2916441e *man/get_assignment_data.Rd
 cb7204772b3532853bd2c85c5645aa6b *man/get_assignment_details.Rd
 ce232de35b530a85591c11601a20cdef *man/get_assignment_groups.Rd
-7e067514ffeedec8b64b43f3b0fea65f *man/get_assignment_submissions.Rd
+a64289544e6173870b11535a5de27dfe *man/get_assignment_submissions.Rd
 276246c9515c7f9f36688e70b4244ad6 *man/get_assignments.Rd
 2d2a37ec472899457638b305e619612f *man/get_calendar_events.Rd
 cbb94ad66cad861da0a767704aeab682 *man/get_conversations.Rd
