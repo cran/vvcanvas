@@ -1,7 +1,7 @@
-809c3fd001fe9e1e8c6fc66d4a6add79 *DESCRIPTION
+9572463b125283dca83e7d6e2850abe0 *DESCRIPTION
 1b8deee5fe0f1057bd6851116f16ab12 *LICENSE
-38d0a611205a7977aa9a6ddd60a55212 *NAMESPACE
-887fa37fd1b47cbf3c6be222b0febeb9 *NEWS.md
+a984229ef66c3a1b7ac859a15ce43344 *NAMESPACE
+139d6e97f2f01997178b7c59690d69b5 *NEWS.md
 499db4f2a7feb6e427b6d4bc6ddc8641 *R/authenticate.R
 fa927c42100927a48bddb6e6fe6138b6 *R/create_assignment_group.R
 9160183772a8e4012c64027a358d40da *R/create_conversation.R
@@ -65,6 +65,7 @@ cb0b09730d43241a8bc6712e9bb1d2ce *R/get_section_students.R
 f7e4d6ef5606ab82aef19bb52e957afb *R/get_user_course_messaging_data.R
 071c15b0b28add369130e3731a672b24 *R/get_user_course_participation_data.R
 3fc49c6314551ff4605efb195af532c3 *R/get_user_folders.R
+797fd38631c166801798102792c9e784 *R/get_users.R
 f87393d8c834cc7c9a546f81181dcd6e *R/list_all_enrollment_terms.R
 fc15d7b223958d9c59eee9dd84178786 *R/paginate.R
 bdd0f4ebdff80e75ae9439000bf9d418 *R/post_new_discussion.R
@@ -78,16 +79,16 @@ bdd0f4ebdff80e75ae9439000bf9d418 *R/post_new_discussion.R
 2d25219ec0fa3c8093b925af0394afab *R/upload_qti_file_with_migration.R
 cf794928715019cf81bd51d467156178 *R/utils-pipe.R
 5bb120825db78ad1f1f1091964e838f3 *README.md
-f27bbe50b6eb50535d428fd252335428 *build/vignette.rds
+33e2504a07dfc3abc3a52c09081da067 *build/vignette.rds
 1a8f47ba17b23c99cc0e3f28047d28f8 *inst/doc/QTI_quiz.R
 bba8888bdc46e1fc086c7b5aa260ffaa *inst/doc/QTI_quiz.Rmd
-03d29bba7dba8f34ecc69ce44b064892 *inst/doc/QTI_quiz.html
+7caa6a8dbedef7387d359d333b44a149 *inst/doc/QTI_quiz.html
 547751c271d8c0a4b7502e241a6d5423 *inst/doc/getting_started.R
 907a8b6122cb3958d00c46b9eadc4861 *inst/doc/getting_started.Rmd
-3c6d7f95770523f2a3b174212447dc8e *inst/doc/getting_started.html
+58a3bad39aec906cf50c7743b2ff1a83 *inst/doc/getting_started.html
 c917558d79aabc8470a0ef3f13d78e97 *inst/doc/groups_use_case.R
 6bec858c02d78bf3dbfccc75ceeaa254 *inst/doc/groups_use_case.Rmd
-00a9490c3459c9ea83b9ff852cd0d768 *inst/doc/groups_use_case.html
+2e42947623e4fb68a9a62617569b1731 *inst/doc/groups_use_case.html
 670b41b4bb3d3a1cd94fa488c7232675 *man/append_access_token.Rd
 77d2e58ad7280f5de3e6f5798aa6c6db *man/canvas_api_key.Rd
 d2357dfae85634cbb6deaf2016665b60 *man/canvas_authenticate.Rd
@@ -156,6 +157,7 @@ d60c887c058e971b49e6f66060e60b36 *man/get_student_summaries.Rd
 e066e46021d442a71adf2bec7a7abf56 *man/get_user_course_messaging_data.Rd
 29cf2466c748a1fe0981f72191a0b439 *man/get_user_course_participation_data.Rd
 cab83e33ff931545a3eeb80e3dba6453 *man/get_user_folders.Rd
+82aba3da3c6d84db35b02eb855281ab0 *man/get_users.Rd
 8ab8ef780bb0745b42e4d20f439676ac *man/list_all_enrollment_terms.Rd
 70483bc9fb59b27d487b9a73b952c95f *man/paginate.Rd
 29ee7383caa7fc8c14f52bd035509064 *man/pipe.Rd
